@@ -28,10 +28,6 @@ int main(int argc, const char * argv[]) {
     int stop=-1;
 
     
-
-    
-    
-    
     while (low<=high && stop==-1) {
         mid=low+((high-low)/2);
         if(val<=bit[mid]){
@@ -49,20 +45,9 @@ int main(int argc, const char * argv[]) {
             }
         }
     }
-    cout<<res;
-
-    
-    
+    cout<<res; // -1 means there is no such value in the list.
 
 
-    
-    
-    
-    
-    
-    
-    
-    
     
 }
 
