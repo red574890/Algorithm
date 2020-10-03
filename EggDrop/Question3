@@ -1,0 +1,49 @@
+Thirt Question.
+Egg drop. Suppose that you have an n-story building (with floors 1 through n) and plenty of eggs. An egg breaks if it is dropped from floor 
+T or higher and does not break otherwise. Your goal is to devise a strategy to determine the value of T given the following limitations 
+on the number of eggs and tosses:
+Version 0: 1 egg, ≤T tosses.
+
+
+We have one egg and we can toss it for ≤T times. Therefore, we can toss the egg through every floors from 1-n.
+When the egg breaks, we know which floor we are so we know the value of T
+
+Answer: Sequential search
+
+Version 1: ∼1lgn eggs and ∼1lgn tosses.
+
+Assume we have 10 floors. First we toss a egg from the middle floor(5th floor) to see whether it break or not.
+If the egg break, we know that T is smaller than 5. So we toss the egg from (1+5)/2=3 floors to test. If the egg doesn't break, we know that
+T is bigger than 5. So we toss the egg from (5+10)/2=7.5 => 7 floor.
+
+By this binary search method, we can know that what is T.
+
+Answer: Binary search.
+
+Version 2: ∼lgT eggs and ∼2lgT tosses.
+
+First, we need to find an interval that contains T.
+
+Version 3: 2 eggs and ∼2sqrt(n) tosses.
+
+First, we need to find an interval that contains T and no larger than sqrt(n).
+
+Let's imagine we separate n into sqrt(n) times and we toss the first egg on each separatation until we break it.
+
+toss at the first floor. 0*sqrt(n) 
+toss at 1*sqrt(n) floor
+toss at 2*sqrt(n) floor
+...
+toss at sqrt(n)*sqrt(n) floor (the maximum floor we can toss)
+
+When we break the egg at k time we toss, we can get the interval between (k-2)*sqrt(n) ~ (k-1)sqrt(n).
+Then we can toss the egg sequentially in every floor within this interval to find the T.
+
+Answer:Toss first egg every sqrt(n) floor to find the interval and then toss second egg within this inteval to find T.
+
+Version 4: 2 eggs and ≤c sqrt(T) tosses for some fixed constant c.
+
+
+
+
+
