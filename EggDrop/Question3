@@ -2,7 +2,7 @@ Thirt Question.
 Egg drop. Suppose that you have an n-story building (with floors 1 through n) and plenty of eggs. An egg breaks if it is dropped from floor 
 T or higher and does not break otherwise. Your goal is to devise a strategy to determine the value of T given the following limitations 
 on the number of eggs and tosses:
-Version 0: 1 egg, ≤T tosses.
+1. Version 0: 1 egg, ≤T tosses.
 
 
 We have one egg and we can toss it for ≤T times. Therefore, we can toss the egg through every floors from 1-n.
@@ -10,7 +10,7 @@ When the egg breaks, we know which floor we are so we know the value of T
 
 Answer: Sequential search
 
-Version 1: ∼1lgn eggs and ∼1lgn tosses.
+2. Version 1: ∼1lgn eggs and ∼1lgn tosses.
 
 Assume we have 10 floors. First we toss a egg from the middle floor(5th floor) to see whether it break or not.
 If the egg break, we know that T is smaller than 5. So we toss the egg from (1+5)/2=3 floors to test. If the egg doesn't break, we know that
@@ -20,11 +20,24 @@ By this binary search method, we can know that what is T.
 
 Answer: Binary search.
 
-Version 2: ∼lgT eggs and ∼2lgT tosses.
+3. Version 2: ∼lgT eggs and ∼2lgT tosses.
 
 First, we need to find an interval that contains T.
 
-Version 3: 2 eggs and ∼2sqrt(n) tosses.
+We will toss the egg in 2^k order untill the we break the egg.
+toss at 2 floor
+toss at 4 floor
+toss at 8 .....
+toss at 2^k...
+
+Assume T=32, then we will toss 5 times to break the egg. The toss time is lg32.
+
+When we break the egg, we know that T is between 2^(k-1) and 2^(k).
+Then we can use binary search to find the T, which will cost roughly lgT toss and lgT eggs.
+
+Answer: Toss the egg every 2^k,k=1,2,3...  until we break the egg, and use the binary technic find the T.
+
+4. Version 3: 2 eggs and ∼2sqrt(n) tosses.
 
 First, we need to find an interval that contains T and no larger than sqrt(n).
 
@@ -41,7 +54,36 @@ Then we can toss the egg sequentially in every floor within this interval to fin
 
 Answer:Toss first egg every sqrt(n) floor to find the interval and then toss second egg within this inteval to find T.
 
-Version 4: 2 eggs and ≤c sqrt(T) tosses for some fixed constant c.
+5. Version 4: 2 eggs and ≤c sqrt(T) tosses for some fixed constant c.
+
+First, we toss the egg as following
+
+1 floor  1 time
+3 floor  2 time
+6 floor  3 time
+...
+((t)(t+1))/2  t times
+
+The most t times we would try is that when T is actually ((t)(t+1))/2. 
+Because we have to toss the egg t times through all interval from ((t)(t-1))/2 to ((t)(t+1))/2
+
+Therefore, we can get the following inequation
+
+((t)(t+1))/2 >= T
+
+Since ((t)(t+1))/2~ t^2 /2 in large number. we can get the follow inequation
+
+t>=sqrt(2T)
+
+Also remember we might have to toss through whole interval so we get the following 
+
+tosses<=2*sqrt(2T)
+tosses<=2sqrt(2)*sqrt(T)
+
+Answer: c=2*sqrt(2)
+
+
+
 
 
 
