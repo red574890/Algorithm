@@ -1,5 +1,8 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.StdRandom;
 
 public class Deque<Item> implements Iterable<Item> {
     private Node first = null;
@@ -122,20 +125,22 @@ public class Deque<Item> implements Iterable<Item> {
         test.addFirst("I");
         test.addFirst("love");
         test.addFirst("Java");
-        //
-        // StdOut.println(test.isEmpty());
-        // StdOut.println(test.size());
+        
+        StdOut.println(test.isEmpty());
+        StdOut.println(test.size());
 
         test.addLast("he");
         test.addLast("is");
         test.addLast("cool");
         StdOut.println(test.size());
-        //StdOut.println(test.removeFirst());
-        //StdOut.println(test.removeLast());
+        StdOut.println(test.removeFirst());
+        StdOut.println(test.removeLast());
         StdOut.println(test.size());
         for (String s : test) {
             StdOut.println(s);
         }
+
+
     }
 
 }
