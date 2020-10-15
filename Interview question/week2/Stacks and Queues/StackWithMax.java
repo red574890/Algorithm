@@ -33,10 +33,32 @@ public class StackWithMax {
 
 
                 t += 1;
-
-
             }
+        }
+        else if (del == sec) {
+            Iterator value = box.iterator();
+            int t = 0;
+            int bsec = sec;
+            int temp;
+            int min = 0;
+            while (value.hasNext()) {
+                temp = (int) value.next();
+                if (temp == max) {
+                    continue;
+                }
+                else {
+                    if (t == 0) {
+                        min = bsec - temp;
+                        sec = temp;
+                    }
+                    else if ((bsec - temp) < min) {
+                        sec = temp;
+                    }
+                }
 
+
+                t += 1;
+            }
         }
 
         return del;
@@ -78,8 +100,11 @@ public class StackWithMax {
         test.pop();
         System.out.println(test.max());
         test.push(4);
-        test.push(100);
+        test.pop();
         System.out.println(test.max());
+
+        test.push(100);
+
 
     }
 }
