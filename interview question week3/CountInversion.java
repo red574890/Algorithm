@@ -26,6 +26,7 @@ public class CountInversion {
 
             }
             else if (less(aux[j], aux[i])) {
+                // when less(aux[j], aux[i]) is true, meaning that a[i] and a[j] has inversion relationship.
                 a[k] = aux[j++];
 
                 count++;
