@@ -7,6 +7,12 @@ n (instead of 2n)?
 Counting inversions. An inversion in an array a[] is a pair of entries a[i] and a[j] such that i<j but 
 a[i]>a[j]. Given an array, design a linearithmic algorithm to count the number of inversions.
 
+Example:
+Input array:{8,4,3,1}
+Output:6
+Reason: this array has the following inversions
+{8,4},{8,1},{8,3},{4,1},{4,3},{3,1}
+
 
 3.
 Shuffling a linked list. Given a singly-linked list containing n items, rearrange the items uniformly at random. Your algorithm should consume a logarithmic (or constant) amount of extra memory and run in time proportional to nlogn in the worst case.
