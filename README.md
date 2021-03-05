@@ -1,4 +1,4 @@
 # Algorithm
-This place is for all the homeworks and codes from Algorithms part1, Coursera.
+This place is for all the idea, homeworks and codes that I learned!!!!!!
 
 
