@@ -94,7 +94,11 @@ public class Graphwithattribute {
     }
 
     public void addcolor(int a, String b) {
-        colors[a] = b;
+        if (b == "r" | b == "w") {
+            colors[a] = b;
+        } else {
+            throw new IllegalArgumentException("please enter r or w");
+        }
     }
 
     public String[] colors() {
