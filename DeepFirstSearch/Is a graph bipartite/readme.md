@@ -8,7 +8,7 @@ Every red vertice is adjacent to white vertice, so we can split them into two se
 
 
 
-<img src="https://camo.githubusercontent.com/..." data-canonical-src="https://github.com/red574890/Algorithm/blob/master/DeepFirstSearch/Is%20a%20graph%20bipartite/bipartite%20spilt.png" width="200" height="200" />
+<img src="https://github.com/red574890/Algorithm/blob/master/DeepFirstSearch/Is%20a%20graph%20bipartite/bipartite%20spilt.png" width="200" height="200" />
 
 
 ## Method:
