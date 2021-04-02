@@ -16,3 +16,4 @@ Every red vertice is adjacent to white vertice, so we can split them into two se
 1. In graphwithattribute, add colors for each vertice.
 2. During DFS, check whether the edge and itself are different colors.
 
+ 
