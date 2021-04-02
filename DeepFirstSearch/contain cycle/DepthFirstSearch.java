@@ -88,12 +88,6 @@ public class DepthFirstSearch {
         return false;
     }
 
-    public void test(int n) {
-        for (int w : g.adj(n)) {
-            System.out.println(w);
-        }
-    }
-
 
     public static void main(String[] args) {
         Graph test = new Graph(4);
